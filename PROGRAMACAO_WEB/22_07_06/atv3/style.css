@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 0px;
+    }
+    textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.material-icons.md-light { color: rgb(168, 0, 247); }
+
+p {
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+    size:10px;
+    color:white;
+}
+div#Assistido {
+    color: rgb(0, 0, 0);
+    display: inline-block;
+}
+input {
+    border: 0px;
+    height: 24px;
+    width: 400px;
+    background-color:blanchedalmond;
+}
+
+button {
+    border: 0px;
+    background-color: transparent;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+button:hover {
+    background-color: rgb(0, 0, 0);
+}
+
+body {
+    background-image: url(pile-of-3d-play-button-logos.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}

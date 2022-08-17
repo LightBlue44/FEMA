@@ -1,0 +1,108 @@
+<meta charset="UTF-8">
+<script>
+    //Crie um programa que solicite ao usuário um valor investido, a taxa de juros anual e a quantidade de dias com o valor investido, após calcule com base na tabela regressiva o valor liquido.
+    //link para tabela regressiva https://paranabancoinvestimentos.com.br/blog/entenda-como-funciona-a-tabela-regressiva-da-renda-fixa/  
+
+    investedMoney = parseInt(prompt(`Digite aqui o valor que foi investido, somente o valor exato, sem ponto ou vírgula: `))
+    fees = parseInt(prompt(`Digite aqui a taxa de juros anual sem o sinal de porcentagem: `))
+    time = parseInt(prompt(`Insira a quantidade de dias decorridos: `))
+
+
+    function calculationInvestment(dias, jurosAnuais, valorInicial) {
+
+        return ((dias / 300) * (jurosAnuais / 100)) * valorInicial
+    }
+
+    if (time = 1) {
+        tabelaRegressiva = 0.96
+    }
+    if (time = 2) {
+        tabelaRegressiva = 0.93
+    }
+    if (time = 3) {
+        tabelaRegressiva = 0.90
+    }
+    if (time = 4) {
+        tabelaRegressiva = 0.86
+    }
+    if (time = 5) {
+        tabelaRegressiva = 0.83
+    }
+    if (time = 6) {
+        tabelaRegressiva = 0.80
+    }
+    if (time = 7) {
+        tabelaRegressiva = 0.76
+    }
+    if (time = 8) {
+        tabelaRegressiva = 0.73
+    }
+    if (time = 9) {
+        tabelaRegressiva = 0.70
+    }
+    if (time = 10) {
+        tabelaRegressiva = 0.66
+    }
+    if (time = 11) {
+        tabelaRegressiva = 0.63
+    }
+    if (time = 12) {
+        tabelaRegressiva = 0.60
+    }
+    if (time = 13) {
+        tabelaRegressiva = 0.56
+    }
+    if (time = 14) {
+        tabelaRegressiva = 0.53
+    }
+    if (time = 15) {
+        tabelaRegressiva = 0.50
+    }
+    if (time = 16) {
+        tabelaRegressiva = 0.46
+    }
+    if (time = 17) {
+        tabelaRegressiva = 0.43
+    }
+    if (time = 18) {
+        tabelaRegressiva = 0.40
+    }
+    if (time = 19) {
+        tabelaRegressiva = 0.36
+    }
+    if (time = 20) {
+        tabelaRegressiva = 0.33
+    }
+    if (time = 21) {
+        tabelaRegressiva = 0.30
+    }
+    if (time = 22) {
+        tabelaRegressiva = 0.26
+    }
+    if (time = 23) {
+        tabelaRegressiva = 0.23
+    }
+    if (time = 24) {
+        tabelaRegressiva = 0.20
+    }
+    if (time = 25) {
+        tabelaRegressiva = 0.16
+    }
+    if (time = 26) {
+        tabelaRegressiva = 0.13
+    }
+    if (time = 27) {
+        tabelaRegressiva = 0.10
+    }
+    if (time = 28) {
+        tabelaRegressiva = 0.6
+    }
+    if (time = 29) {
+        tabelaRegressiva = 0.3
+    }
+    if (time >= 30) {
+        tabelaRegressiva = 0
+    }
+
+    console.log(`Seu investimento retornou ${calculationInvestment(time, fees, investedMoney) * tabelaRegressiva}`)
+</script>

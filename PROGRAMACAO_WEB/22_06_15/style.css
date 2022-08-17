@@ -1,0 +1,56 @@
+body {
+    background-color: #000000;
+  }
+
+  .Contador {
+    background-color: #ffffff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    min-width: 500px;
+    min-height: 230px;
+    box-shadow: 5px 5px #8a8a8a;
+    border-radius: 8px;
+  }
+
+  .Contador-titulo {
+    text-align: center;
+  }
+  .Aumentar {
+    background-color: #ffffff;
+    border: #ffffff;
+    position: relative;
+    bottom: -10px;
+    left: -100px;
+    color: #008000;
+    border-radius: 4px;
+  }
+  .Resetar {
+    background-color: #ffffff;
+    border: #ffffff;
+    position: relative;
+    bottom: -10px;
+    left: 0px;
+    color: #ffff00;
+    border-radius: 4px;
+  }
+  .Diminuir {
+    background-color: #ffffff;
+    border: #ffffff;
+    position: relative;
+    bottom: -10px;
+    left: 100px;
+    color: #ff0000;
+    border-radius: 4px;
+  }
+  .Aumentar:hover {
+    background-color: #797979;
+  }
+  .Resetar:hover {
+    background-color: #797979;
+  }
+  .Diminuir:hover {
+    background-color: #797979;
+  }

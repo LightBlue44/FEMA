@@ -1,0 +1,20 @@
+<meta charset="UTF-8">
+<script>
+    //Desenvolva um programa que leia o nome de um funcionário, seu salário, quantos anos ele trabalha na empresa e mostre seu novo salário, reajustado de acordo com a tabela a seguir:
+    //a) até 3 anos de empresa aumento de 3%; entre 3 à 10 anos de empresa aumento de 12,5%; c) acima de 10 anos aumento de 20%
+    let name = prompt('Insira o seu nome')
+    let salario = parseFloat(prompt('Insira o seu salário/contracheque'))
+    let anosTrabalho = parseFloat(prompt('Insira há quanatos anos você trabalha nesa empresa'))
+    let ajusteSalarial = 0;
+
+    if (anosTrabalho <= 3) {
+        ajusteSalarial = ((salario * 0.03) + salario)
+        window.alert('O seu salário/contracheque foi ajustado! \nA nova quantia que você irá receber a partir de agora será de: R$' + ajusteSalarial.toFixed(2))
+    } else if (anosTrabalho >= 3 && anosTrabalho <= 10) {
+        ajusteSalarial = ((salario * 0.125) + salario)
+        window.alert('O seu salário/contracheque foi ajustado! \nA nova quantia que você irá receber a partir de agora será de: R$' + ajusteSalarial.toFixed(2))
+    } else if (anosTrabalho >= 10) {
+        ajusteSalarial = ((salario * 0.20) + salario)
+        window.alert('O seu salário/contracheque foi ajustado! \nA nova quantia que você irá receber a partir de agora será de: R$' + ajusteSalarial.toFixed(2))
+    }
+</script>

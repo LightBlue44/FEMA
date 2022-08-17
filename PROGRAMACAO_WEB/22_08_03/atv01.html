@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<br lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exemplo 01</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <section class="notas">
+    <label class="label-input1">Nome</label> <br />
+    <input id="nome" type="text" placeholder="Insira o nome do aluno"/> <br />
+
+    <label class="label-input2">Insira a nota</label> <br />
+    <input id="nota1" type="number" placeholder="Nota 1"/> <br />
+
+    <label class="label-input3">Insira a nota</label> <br />
+    <input id="nota2" type="number" placeholder="Nota 2"/> <br />
+
+    <br /> 
+    <div id="resultado"></div>
+    <br />
+    <button id="butao" onclick="calcularNota()">Calcular</button>
+    </section>
+    <script src="script.js"></script>
+    <div class="tabela">
+        <table border="1">
+            <tr>
+                <th>Nome</th>
+                <th>Nota 1</th>
+                <th>Nota 2</th>
+                <th>Média</th>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

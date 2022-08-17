@@ -1,0 +1,23 @@
+<meta charset="UTF-8">
+<script>
+    //Crie um programa para calcular desconto de acordo com a forma de pagamento. Seguindo os seguintes passos:
+    //a. Solicitar o valor total da compra;
+    //b. Solicitar a forma de pagamento que terá as seguintes opções: 1) à vista; 2) cartão de débito; 3) cartão crédito; Caso seja selecionado a opção 1 ou 2 o programa deverá aplicar 5% de desconto.
+    //c. O programa irá mostrar em uma janela o valor total da compra, o desconto, a forma de pagamento e o valor total a pagar. 
+    window.alert('Bem vindo ao programa calculador de compras')
+    var valorCompra = Number(parseFloat(window.prompt('Digite o valor total da compra')))
+    var pagamento = Number(parseFloat(window.prompt('Digite a forma de pagamento: \n1 - À vista; \n2 - Cartão de débito; \n3 - Cartão de crédito')))
+    var descontoPorcent = 5 / 100
+    var valorDesconto = (descontoPorcent * valorCompra)
+    let valorCompraComDesconto = (valorCompra - valorDesconto)
+
+    if (pagamento == 1) {
+        window.alert('Este é o valor da sua compra: ' + valorCompra + '\nEsse é o desconto: 5%' + '\nEssa é a forma de pagamento: À vista ' + '\nE esse é o valor a pagar: ' + valorCompraComDesconto)
+    } 
+    if  (pagamento == 2){
+        window.alert('Este é o valor da sua compra: ' + valorCompra + '\nEsse é o desconto: 5%' + '\nEssa é a forma de pagamento: Cartão de débito' + '\nE esse é o valor a pagar: ' + valorCompraComDesconto)
+    } 
+    if  (pagamento == 3){
+        window.alert('Este é o valor da sua compra: ' + valorCompra + '\nEsse é o desconto: 0%' + '\nEssa é a forma de pagamento: Cartão de crédito' + '\nEsse é o valor a pagar: ' + valorCompra)
+    }
+</script>

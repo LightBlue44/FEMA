@@ -1,0 +1,22 @@
+<meta charset="UTF-8">
+<script>
+
+    //Crie uma função que receba um número e retorna verdadeiro caso o valor seja positivo e falso se o valor for negativo 
+    //let teste = true;
+    //let teste2 = false;
+
+    // essa função embaixo está na forma mais completa
+    //function ePositivo(numero) {
+    //   if (numero >= 0){
+    //       return true;
+    //   } else {
+    //   return false;
+    //   }
+    //}
+
+    function ePositivo(numero) {
+        return numero >= 0;
+    }
+    let valorUsuario = parseInt(prompt('Informe um valor'));
+    console.log('O meu número é positivo? ' + ePositivo(valorUsuario));
+</script>

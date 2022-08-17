@@ -1,0 +1,18 @@
+<meta charset="UTF-8">
+<script>
+    //Escreva um programa para aprovar ou não o empréstimo bancário para a compra de uma casa.
+    //O programa vai perguntar o valor da casa, o salário do comprador e em quantos anos ele vai pagar.
+    //Calcule o valor da prestação mensal, sabendo que ela não pode exceder 30% do salário ou então o empréstimo será negado.
+    let casa = parseFloat(prompt('Informe o valor da casa'))
+    let salario = parseFloat(prompt('Informe o valor do seu contracheque/salário'))
+    let anos = parseFloat(prompt('Informe a quantidade de anos em que você deseja pagar'))
+    let meses = anos * 12;
+    let aprovado = salario * 0.30;
+    let mensalidade = casa / meses;
+
+    if (aprovado < mensalidade) {
+        console.log('O seu empréstimo bancário para a compra de uma casa infelizmente foi negado.')
+    } else if (aprovado > mensalidade) {
+        console.log('O seu empréstimo bancário para a compra da casa felizmente foi aprovado!')
+    }
+</script>

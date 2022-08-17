@@ -1,0 +1,12 @@
+<meta charset="UTF-8">
+<script>
+    //Faça um algoritmo que leia a largura e altura de uma parede, calcule e mostre a área a ser pintada e a quantidade de tinta necessária para o serviço, sabendo que cada litro de tinta pinta uma área de 2 metros quadrados.
+    let largura = parseFloat(prompt('Informe a largura da parede'))
+    let altura = parseFloat(prompt('Informe a altura da parede'))
+    let tintaArea = 2;
+
+    let area = (altura * largura)
+    console.log('A área a ser pintada é de ' + area.toFixed(2) + 'm²')
+    let tintaQuant = (area / tintaArea)
+    console.log('A quantidade de litros de tinta há ser comprada é de ' + tintaQuant.toFixed(2) + ' litros')
+</script>

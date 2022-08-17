@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<script>
+    //Crie um jogo de adivinhação de número e enquanto o usuário não acertar o valor continue pedindo para informar o valor.
+    //Se o usuário errar mais de 3 vezes finalize e avise o usuário que ele perdeu.
+    var segredo = 137;
+    var erros = 0;
+    var tentativas = 2;
+    var numeroDigitado = 0;
+    window.alert('Tente acertar qual é o segredo \nO número máximo de tentativas é 3')
+    while (segredo != numeroDigitado){
+        numeroDigitado = Number(parseFloat(prompt('Digite um número')))
+        if (segredo == numeroDigitado){
+            window.alert('Parabéns!!! \nVocê acertou')
+        } else {
+            window.alert('Você errou\n Você só tem mais ' + tentativas + ' tentativas agora')
+            erros++
+            tentativas--
+        }
+            if (erros == 3){
+            numeroDigitado = 137
+            window.alert('Você perdeu e não tem mais tentativas \nO número era ' + segredo)
+            }
+        }
+</script>

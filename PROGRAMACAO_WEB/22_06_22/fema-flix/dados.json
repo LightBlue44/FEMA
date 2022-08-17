@@ -1,0 +1,14 @@
+[
+    {
+        titulo: 'RAMBO',
+        classificacao: 12
+    },
+    {
+        titulo: 'Alvin e os esquilos',
+        classificacao: 8
+    },
+    {
+        titulo: 'Alice no pais das Maravilhas',
+        classificacao: 8
+    }
+]

@@ -1,0 +1,54 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    margin: 0px;
+    }
+    textarea:focus, input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+.material-icons.md-light { color: rgb(255, 255, 255); }
+.Item {
+    border: 3px #0077ff solid;
+    background-color: #249797;
+    border-radius: 11px;
+    display: flexbox;
+    max-width: 700px;
+    margin: 20px;
+}
+
+body {
+    background-image: url();
+}
+input {
+    border: 0px;
+    height: 24px;
+    width: 400px;
+    background-color: transparent;
+}
+h2 {
+    color: #ffffff;
+}
+button {
+    border: 0px;
+    background-color: transparent;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+button:hover {
+    background-color: #00fff2;
+}
+nav {
+    background-color: #071c49;
+    height: 20px;
+    border-radius: 0px 0px 15px 15px;
+    padding: 30px;
+}
+hr {
+    margin-left: 5px;
+    color: #130000;
+    width: 450px;
+}

@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<script>
+    //Crie um vetor e armazene 5 notas informadas pelo usuário, após calcule a média e exiba o resultado da média.
+    let notas = [];
+    let soma = 0;
+    for (let i = 0; i < 5; i++) {
+        let nota = parseFloat(prompt('Informe a nota'));
+        notas.push(nota);
+    }
+
+    for (let i = 0; i < notas.length; i++) {
+        soma = soma + notas[i];
+    }
+
+    let media = soma / 5;
+
+    console.log('A média é de: ' + media);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

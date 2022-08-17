@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<br lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Exemplo 01</title>
+    <style>
+        body {
+            background-color: #05f7ff;
+        }
+
+        #resultado {
+            border: 1px solid #000;
+            border-radius: 6px;
+            min-height: 20px;
+            width: 200px;
+            background-color: #fff;
+        }
+
+        button {
+            background: #fff;
+            border: 1px solid#eee9dd;
+            border-radius: 3px;
+            padding: 6px 12px;
+            color: #151515;
+        }
+
+        button:hover {
+            background-color: #12637e;
+            color: #ffffff;
+        }
+
+        .label-input {
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <label class="label-input1">Nome</label> <br />
+    <input id="nome" type="text" /> <br />
+
+    <label class="label-input2">Nota 1</label> <br />
+    <input id="nota1" type="number" /> <br />
+
+    <label class="label-input3">Nota 2</label> <br />
+    <input id="nota2" type="number" /> <br />
+
+    <br /> 
+    <div id="resultado"></div>
+    <br />
+    <button onclick="calcularNota()">Calcular</button>
+    <script>
+        function calcularNota() {
+            let nota1 = parseInt(document.querySelector("#nota1").value);
+            let nota2 = parseInt(document.querySelector("#nota2").value);
+            let nome = document.querySelector('#nome').value;
+
+            let media = (nota1 + nota2) / 2;
+
+            document.querySelector("#resultado").innerHTML = nome + ", a sua média das notas é: " + media;
+
+            if (media >= 7) {
+                document.querySelector('#resultado').style.color = '#1bd11b'
+             } else {
+                document.querySelector('#resultado').style.color = '#ff0000'
+             }
+        }
+    </script>
+</body>
+
+</html>

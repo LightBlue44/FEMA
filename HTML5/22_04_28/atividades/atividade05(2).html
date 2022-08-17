@@ -1,0 +1,47 @@
+<script>
+    //Calcule o salário liquido levando em conta o INSS e o IR. Primeiramente calcula e desconta o INSS e após calcula o IR.
+    //TABELA INSS
+    //SALÁRIO DE CONTRIBUIÇÃO	     ALÍQUOTA (%)	PARCELA A DEDUZIR (R$)
+    //Até R$ 1.212	                   7,50%	                 0,00
+    //R$ 1.212,01 até R$ 2.427,35	   9,00%	                18,18
+    //R$ 2.427,36 até R$ 3.641,03	  12,00%	                91,01
+    //R$ 3.641,04 até R$ 7.087,22	  14,00%	               163,00
+
+    // TABELA IR
+    //Base de cálculo	             Alíquota	Parcela a deduzir
+    //Até R$1.903,98	              Isento	   Isento
+    //De R$1.903,99 até R$2.826,65	   7,5%       R$ 142,80
+    //De R$2.826,66 até R$3.751,05 	   15%	      R$ 354,80
+    //De R$3.751,06 até R$4.664,68	  22,5%	      R$ 636,13
+    //Acima de R$4.664,68	          27,5%	      R$ 869,36
+    
+    //A única diferença dessa atividade05(2) e da outra atividade5, é que essa foi feita com função 
+    let salarioInss = parseFloat(prompt('Informe o salário:'));
+
+    function porcentInss(chamar) {
+        if (salarioInss <= 1212) { return { ali: 7.5, ded: 0 } }
+        else if (salarioInss <= 2427.35) { return { aliq: 9, ded: 18.18 } }
+        else if (salarioInss <= 3641.03) { return { aliq: 12, ded: 91.01 } }
+        else if (salarioInss <= 7087.22) { return { aliq: 14, ded: 163 } }
+        else { return { aliq: 14, ded: 163 } }
+    }
+    function porcentIR(chamar) {
+        if (salarioIns <= 1903.98) { return { aliq: 0, ded: 0 } }
+        else if (salarioInss <= 2826.65) { return { aliq: 7.5, ded: 142.80 } }
+        else if (salarioInss <= 3751.05) { return { aliq: 15, ded: 354.80 } }
+        else if (salarioInss <= 4664.68) { return { aliq: 22.5, ded: 636.13 } }
+        else { return { aliq: 27.5, ded: 869.36 } }
+    }
+
+    let inss = porcentInss(salarioInss);
+    let ir = porcentIR(salarioInss);
+
+    console.log(`A alíquota do INSS aplicada ao salário será de ${inss.ali} e a alíquota do Imposto de Renda será de ${ir.aliq}`);
+
+    let salLiqInss = salarioInss - (salarioInss * (inss.aliq / 100) - inss.ded);
+    let salLiqIr = salLiqInss - (salLiqInss * (ir.aliq / 100) - ir.ded);
+
+    console.log(`O salário com dedução de INSS terá o valor de R$ ${salLiqInss}`);
+    console.log(`O salário com dedudação de INSS e IR será de R$ ${salLiqIr}`);
+
+</script>

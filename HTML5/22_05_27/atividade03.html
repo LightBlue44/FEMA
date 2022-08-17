@@ -1,0 +1,33 @@
+<meta charset="UTF-8">
+<script>
+    //Crie um algoritmo que leia a idade de 10 pessoas, mostrando no final:
+    //a) Qual é a média de idade do grupo
+    //b) Quantas pessoas tem mais de 18 anos
+    //c) Quantas pessoas tem menos de 5 anos
+    //d) Qual foi a maior idade lida
+
+    let ages = []
+    let median;
+    let maioridade = 18
+    let kids = 5
+    let maior;
+    let idadeSomada = 0;
+    let maiores = 0;
+    for (let i = 0; i <= 9; i++) {
+        let idades = parseInt(prompt('Insira as idades'))
+        ages.push(idades)
+    }
+    for (let b = 0; b < ages.length; b++) {
+        idadeSomada = idadeSomada + ages[b];
+    }
+    median = idadeSomada / 10
+    console.log('A média das idades do grupo é ' + median)
+
+    for (let a = 0; a <= ages.length; a++)
+        if (ages[a] > maioridade) {
+            maiores = 0 + 1
+
+        }
+
+    //ATENÇÃO!!! Este código não está terminado, caso queira contribuir, vá em frente.
+</script>

@@ -1,0 +1,48 @@
+.notas {
+  background-color: #00ffea;
+  border-radius: 6px;
+  width: 250px;
+  height: 220px;
+  text-align: center;
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 520px;
+  box-shadow: 5px 5px #00bbab;
+}
+
+body {
+  background-color: #ffffff;
+  align-items: center;
+}
+
+#resultado {
+  border: 1px solid #000;
+  border-radius: 6px;
+  min-height: 20px;
+  width: 200px;
+  background-color: #fff;
+  margin-left: 25px;
+}
+
+button {
+  background: #fff;
+  border: 1px solid#eee9dd;
+  border-radius: 3px;
+  padding: 6px 12px;
+  color: #151515;
+}
+
+button:hover {
+  background-color: #12637e;
+  color: #ffffff;
+}
+
+.label-input {
+  font-weight: bold;
+}
+
+.tabela{
+overflow-x: auto;
+margin-left: 550px;
+margin-top: 250px;
+}

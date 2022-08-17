@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<script>
+    //Calcule o salário liquido levando em conta o INSS e o IR. Primeiramente calcula e desconta o INSS e após calcula o IR.
+    //TABELA INSS
+    //SALÁRIO DE CONTRIBUIÇÃO	     ALÍQUOTA (%)	PARCELA A DEDUZIR (R$)
+    //Até R$ 1.212	                   7,50%	                 0,00
+    //R$ 1.212,01 até R$ 2.427,35	   9,00%	                18,18
+    //R$ 2.427,36 até R$ 3.641,03	  12,00%	                91,01
+    //R$ 3.641,04 até R$ 7.087,22	  14,00%	               163,00
+
+    // TABELA IR
+    //Base de cálculo	             Alíquota	Parcela a deduzir
+    //Até R$1.903,98	              Isento	   Isento
+    //De R$1.903,99 até R$2.826,65	   7,5%       R$ 142,80
+    //De R$2.826,66 até R$3.751,05 	   15%	      R$ 354,80
+    //De R$3.751,06 até R$4.664,68	  22,5%	      R$ 636,13
+    //Acima de R$4.664,68	          27,5%	      R$ 869,36
+
+    window.alert('Bem vindo! Vamos calcular salário líquido?')
+    let salarioBruto = parseFloat(prompt('Informe o seu salário bruto'));
+    let salarioSemInss = 0;
+    let salarioLiq = 0;
+    let valorInss = 0;
+    let valorIR = 0;
+
+    if (salarioBruto <= 1212) {
+        valorInss = (salarioBruto / 100) * 7.5;
+    } else if (salarioBruto >= 1212.01 && salarioBruto <= 2427.35) {
+        valorInss = ((salarioBruto / 100) * 9) - 18.18;
+    } else if (salarioBruto >= 2427.36 && salarioBruto <= 3641.03) {
+        valorInss = ((salarioBruto / 100) * 12) - 91.01;
+    } else if (salarioBruto >= 3641.04) {
+        valorInss = ((salarioBruto / 100) * 14) - 163;
+    }
+
+    salarioSemInss = salarioBruto - valorInss;
+
+    if (salarioSemInss <= 1903.98) {
+        salarioLiq = salarioSemInss
+        console.log('O salário bruto é de R$' + salarioBruto + '\nO valor retirado para o INSS é de R$' + valorInss.toFixed(2) + '\nSeu salário é isento de imposto de renda.\nPortanto o salário líquido é de R$' + salarioLiq.toFixed(2))
+    } else if (salarioSemInss >= 1903.99 && salarioSemInss <= 2826.65) {
+        valorIR = ((salarioSemInss / 100) * 7.5) - 142.80;
+        salarioLiq = salarioSemInss - valorIR;
+        console.log('O salário bruto é de R$' + salarioBruto + '\nO valor retirado para o INSS é de R$' + valorInss.toFixed(2) + '\nE o valor retirado pelo Imposto de Renda é de R$' + valorIR.toFixed(2) + '\nO salário líquido é de R$' + salarioLiq.toFixed(2))
+    } else if (salarioSemInss >= 2826.66 && salarioSemInss <= 3751.05) {
+        valorIR = ((salarioSemInss / 100) * 15) - 374.80;
+        salarioLiq = salarioSemInss - valorIR;
+        console.log('O salário bruto é de R$' + salarioBruto + '\nO valor retirado para o INSS é de R$' + valorInss.toFixed(2) + '\nE o valor retirado pelo Imposto de Renda é de R$' + valorIR.toFixed(2) + '\nO salário líquido é de R$' + salarioLiq.toFixed(2))
+    } else if (salarioSemInss >= 3751.06 && salarioSemInss <= 4664.68) {
+        valorIR = ((salarioSemInss / 100) * 22.5) - 636.13;
+        salarioLiq = salarioSemInss - valorIR;
+        console.log('O salário bruto é de R$' + salarioBruto + '\nO valor retirado para o INSS é de R$' + valorInss.toFixed(2) + '\nE o valor retirado pelo Imposto de Renda é de R$' + valorIR.toFixed(2) + '\nO salário líquido é de R$' + salarioLiq.toFixed(2))
+    } else {
+        valorIR = ((salarioSemInss / 100) * 27.5) - 869.36;
+        salarioLiq = salarioSemInss - valorIR;
+        console.log('O salário bruto é de R$' + salarioBruto + '\nO valor retirado para o INSS é de R$' + valorInss.toFixed(2) + '\nE o valor retirado pelo Imposto de Renda é de R$' + valorIR.toFixed(2) + '\nO salário líquido é de R$' + salarioLiq.toFixed(2))
+    }
+
+</script>
