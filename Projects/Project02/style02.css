@@ -1,0 +1,30 @@
+body{
+  background-image: url("http://noic.com.br/wp-content/uploads/2018/09/wp2597357-math-wallpaper.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 340px;
+}
+
+button {
+  background-color: #ffffff;
+  flex-wrap: wrap;
+}
+
+button:hover {
+  background-color: #4d4d4d;
+}
+
+.calculadora_display{
+    background-color: #ffffff;
+    margin-left: 50%;
+    margin-right: 50%;
+}
+
+.calculadora_keys{
+    display: grid;
+    max-width: 20px;
+    background-color: #ffffff;
+    position: relative;
+    margin-left: 50%;
+}
