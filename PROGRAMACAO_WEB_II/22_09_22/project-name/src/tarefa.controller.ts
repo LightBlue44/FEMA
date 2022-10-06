@@ -23,7 +23,7 @@ export class TarefaController {
   @Get("/tarefa/:codigo")
   buscarPorCodigo(@Param() parametro) {
     console.log(parametro.codigo);
-    let tarefa = this.tarefaLista.find(tarefa => tarefa.codigo ==parametro.codigo);
+    let tarefa = this.tarefaLista.find(tarefa => tarefa.codigo == parametro.codigo);
     return tarefa;
   }
 
