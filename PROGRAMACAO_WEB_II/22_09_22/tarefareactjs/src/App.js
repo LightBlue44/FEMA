@@ -9,12 +9,10 @@ function App() {
   const [descricao,setDescricao] = useState('')
   const [listaTarefa,setListaTarefa] = useState([])
 
-  // Quando inicia a pagina chama os dados do servidor
   useEffect(() => {
     buscar()
   }, [])
 
-  // Retorna os dados do servidor
   function buscar(){
     axios.get('http://localhost:3100/tarefa').then(resultado => {
     console.log(resultado.data)
@@ -22,7 +20,6 @@ function App() {
   })
   }
 
-  // Identifica o id e chama o back para excluir
   function excluirTarefa(id) {
     let item = listaTarefa.find(n => n.codigo === id)
     axios.delete(`http://localhost:3100/tarefa/${item.codigo}`).then(() => {
@@ -30,17 +27,21 @@ function App() {
     })
   }
 
-  // Coloca os dados do id e descrição nos inputs para editar
   function editarTarefa(id) {
     let item = listaTarefa.find(n => n.codigo === id)
     setId(item.codigo)
     setDescricao(item.descricao)
     document.querySelector('#descricao').focus()
+  } if (!id){
+    return;
   }
 
-  // Salva um novo usuário no Backend
   function salvar(event) {
     event.preventDefault();
+    
+    if (!descricao && !id){
+      return;
+    }
     
     let tarefa = {
       codigo:id,
@@ -56,6 +57,7 @@ function App() {
 
     console.log("tarefa", tarefa)
   }
+  
     
   
   return (
@@ -65,7 +67,7 @@ function App() {
 
       <div className='mb-3'>
         
-        <label className='form-label'> Id</label>
+        <label className='form-label'> ID</label>
         <input 
         id='id'
         type="number" 
@@ -87,13 +89,13 @@ function App() {
           />
         
         </div>
-        <button type='submit' className='btn btn-primary'>Salvar</button>
+        <button type='submit' className='btn btn-outline-primary'>Salvar</button>
       </form>
 
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">Id</th>
+            <th scope="col">ID</th>
             <th scope="col">Descrição</th>
             <th scope='col'>Ações</th>
           </tr>
@@ -105,8 +107,8 @@ function App() {
                 <td>{n.codigo}</td>
                 <td>{n.descricao}</td>
                 <td>
-                  <button type="button" className='btn btn-info' onClick={() => editarTarefa(n.codigo)}>Editar</button>
-                  <button type="button" className='btn btn-danger' onClick={() => excluirTarefa(n.codigo)}>Excluir</button>
+                  <button type="button" className='btn btn-outline-secondary' onClick={() => editarTarefa(n.codigo)}>Editar</button>
+                  <button type="button" className='btn btn-outline-danger' onClick={() => excluirTarefa(n.codigo)}>Excluir</button>
                 </td>
               </tr>
             ))
