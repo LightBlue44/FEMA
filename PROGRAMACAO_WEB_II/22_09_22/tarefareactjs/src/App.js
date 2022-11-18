@@ -5,7 +5,7 @@ import './App.css';
 
 function App() {
 
-  const [id,setId] = useState('')
+  const [codigo,setCodigo] = useState()
   const [descricao,setDescricao] = useState('')
   const [listaTarefa,setListaTarefa] = useState([])
 
@@ -20,39 +20,31 @@ function App() {
   })
   }
 
-  function excluirTarefa(id) {
-    let item = listaTarefa.find(n => n.codigo === id)
-    axios.delete(`http://localhost:3100/tarefa/${item.codigo}`).then(() => {
+  function excluirTarefa(tarefa) {
+    axios.delete(`http://localhost:3100/tarefa/${tarefa.codigo}`).then(() => {
       buscar()
     })
   }
 
-  function editarTarefa(id) {
-    let item = listaTarefa.find(n => n.codigo === id)
-    setId(item.codigo)
-    setDescricao(item.descricao)
-    document.querySelector('#descricao').focus()
-  } if (!id){
-    return;
+  function editarTarefa(tarefa) {
+    axios.get(`http://localhost:3100/tarefa/${tarefa.codigo}`).then((result) => {
+      setCodigo(result.data.codigo);
+      setDescricao(result.data.descricao);
+    });
   }
-
   function salvar(event) {
     event.preventDefault();
     
-    if (!descricao && !id){
-      return;
-    }
-    
     let tarefa = {
-      codigo:id,
-      descricao:descricao
+      codigo: codigo,
+      descricao: descricao
     }
 
     // Manda os dados
     axios.put('http://localhost:3100/tarefa',tarefa).then(()=>{
       buscar()
     })
-    setId('')
+    setCodigo('')
     setDescricao('')
 
     console.log("tarefa", tarefa)
@@ -67,13 +59,13 @@ function App() {
 
       <div className='mb-3'>
         
-        <label className='form-label'> ID</label>
+        <label className='form-label'>Código (Não altere!)</label>
         <input 
-        id='id'
+        codigo='codigo'
         type="number" 
         className='form-control' 
-        value={id} 
-        onChange={(event)=>setId(event.target.value)}
+        value={codigo} 
+        onChange={(event)=>setCodigo(event.target.value)}
         />
       
       </div>
@@ -81,7 +73,7 @@ function App() {
       
           <label className='form-label'> Descrição da Tarefa</label>
           <input 
-          id='descricao'
+          codigo='descricao'
           type="text" 
           className='form-control' 
           value={descricao} 
@@ -95,7 +87,7 @@ function App() {
       <table className="table">
         <thead>
           <tr>
-            <th scope="col">ID</th>
+            <th scope="col">Código</th>
             <th scope="col">Descrição</th>
             <th scope='col'>Ações</th>
           </tr>
